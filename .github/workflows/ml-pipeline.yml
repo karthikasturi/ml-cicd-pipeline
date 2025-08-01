@@ -121,7 +121,7 @@ jobs:
 #    exit(1)
 #else:
 #    print(f'✅ Model accuracy {metrics.get(\"accuracy\", 0):.4f} meets threshold')
-        "
+#        "
 
     - name: Upload model artifacts
       uses: actions/upload-artifact@v3
