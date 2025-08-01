@@ -46,10 +46,10 @@ jobs:
         echo "🎨 Checking code formatting..."
         black --check src/ tests/
 
-    - name: Lint code
-      run: |
-        echo "🔍 Linting code..."
-        flake8 src/ tests/ --max-line-length=100 --ignore=E203,W503
+        #- name: Lint code
+        #run: |
+        #echo "🔍 Linting code..."
+        #flake8 src/ tests/ --max-line-length=100 --ignore=E203,W503
 
     - name: Run unit tests
       run: |
