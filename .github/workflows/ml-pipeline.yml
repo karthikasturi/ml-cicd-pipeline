@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  PYTHON_VERSION: '3.10'
+  PYTHON_VERSION: '3.12.3'
   MODEL_NAME: 'customer_classifier'
   REGISTRY: ghcr.io
   IMAGE_NAME: ml-model-api
