@@ -10,7 +10,7 @@ env:
   PYTHON_VERSION: '3.12.3'
   MODEL_NAME: 'customer_classifier'
   REGISTRY: ghcr.io
-  IMAGE_NAME: ml-model-api
+  IMAGE_NAME: karthikasturi/ml-model-api
 
 jobs:
   # Stage 1: Code Quality and Unit Tests
@@ -215,6 +215,12 @@ jobs:
         name: trained-model
         path: .
 
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASS }}
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
@@ -229,7 +235,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        images: ${{ env.IMAGE_NAME }}
         tags: |
           type=ref,event=branch
           type=ref,event=pr
