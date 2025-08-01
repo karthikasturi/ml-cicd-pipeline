@@ -5,8 +5,6 @@ from datetime import datetime
 
 import joblib
 import mlflow
-import mlflow.sklearn
-import numpy as np
 import pandas as pd
 import yaml
 from sklearn.datasets import load_breast_cancer

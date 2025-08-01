@@ -72,7 +72,7 @@ class TestPredictionAPI:
 
             print("✅ Predict endpoint test passed")
         else:
-            print(f"⚠️ Predict endpoint test skipped - model not loaded")
+            print("⚠️ Predict endpoint test skipped - model not loaded")
 
     def test_predict_endpoint_invalid_input(self, client):
         """Test prediction endpoint with invalid input"""
